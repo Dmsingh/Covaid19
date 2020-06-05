@@ -72,7 +72,7 @@ gunicorn==20.0.4
 h5py==2.9.0
 html-table-parser-python3==0.1.5
 html5lib==1.0.1
-httplib2==0.17.0
+httplib2==0.18.0
 idna==2.8
 importlib-metadata==0.18
 intel-openmp==2019.0
