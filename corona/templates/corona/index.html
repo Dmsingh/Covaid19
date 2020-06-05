@@ -1,0 +1,233 @@
+{% extends 'corona/header.html' %}
+
+{% block title %} Home Page{%endblock %}
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&family=Lobster&display=swap" rel="stylesheet">
+{%block css%}
+ h1{
+  color:rgb(12, 11, 11), 43;
+  text-decoration-line: underline;
+  font-family: 'Lobster', cursive;
+ }
+ p{
+  font-family: 'Bitter', serif;
+  font-size:18px;
+  font-weight:600;
+  color:black
+ }
+ .list{
+  font-family: 'Bitter', serif;
+    font-size:16px;
+    font-weight:600;
+    color:white
+} 
+.modal-content{
+  opacity:0.9;
+  background-color:black;
+}
+h2{
+  color:white
+}
+.modal-body h1{
+  color:white;
+    text-decoration-line: underline;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+}
+h5{
+  color:white;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+}
+.close{
+  color:white
+}
+.card-img-top{
+  max-height:300px
+}
+.btn1{
+ margin-left:-30px;
+ margin-top:8px;
+ position:fixed;
+ opacity:0.9
+ 
+}
+.div1{
+  margin-top:-100px
+}
+{%endblock%}
+
+
+{% block body %}
+{%load static%}
+
+<div class="background-wrap">
+  <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted"> 
+
+      <!--replace your video url here-->
+      <source src="{% static "corona/home.mp4"%}" type="video/mp4">
+      Video not supported
+  </video>          
+</div>
+<div class="container " style="background-color:white;opacity:0.9;"> 
+<div class="container">
+  <a class="btn1 btn-lg bg-success tooltip " data-toggle="tooltip" data-placement="left" title="Click me for precaution." style="text-decoration-line:none;color:white" href="/corona/precaution" ><img class="border transparent rounded-circle" style="width: 50px;height:50px;border:6px solid green"src="{% static "corona/image/precaution.jpg"%}" alt="" class="rounded-circle"></a>
+  <br>
+  <br>
+  <br>
+     
+    <a class=" btn1 btn-lg bg-danger tooltip" data-placement="right" title="Click me for symptoms." style="text-decoration-line:none;color:white" data-toggle="modal" data-target="#videoModal"  ><img class="border transparent rounded-circle" style="width: 50px;height:50px;"src="{% static "corona/image/symptoms.svg"%}" alt="" class="rounded-circle"></a>
+       <br>
+  <br>
+  <br>
+  
+    <a class=" btn1 btn-lg bg-warning tooltip" data-placement="right" title="Click me for major Government Links." style="text-decoration-line:none;color:white" data-toggle="modal" data-target="#videoModal1"  ><img class="border transparent rounded-circle" style="width: 50px;height:50px; "src="{% static "corona/image/links.svg"%}" alt="" class="rounded-circle"></a>
+    </div> 
+  
+         
+<h1 class="div1" >  What is Coronavirus?</h1>
+<br>
+<p >
+  Coronaviruses are a group of related viruses that cause diseases in mammals and birds. In humans, coronaviruses cause respiratory tract infections that can range from mild to lethal. Mild illnesses include some cases of the common cold (which has other possible causes, predominantly rhinoviruses), while more lethal varieties can cause SARS, MERS, and COVID-19. Symptoms in other species vary: in chickens, they cause an upper respiratory tract disease, while in cows and pigs they cause diarrhea. There are yet to be vaccines or antiviral drugs to prevent or treat human coronavirus infections.
+
+Coronaviruses constitute the subfamily Orthocoronavirinae, in the family Coronaviridae, order Nidovirales, and realm Riboviria.They are enveloped viruses with a positive-sense single-stranded RNA genome and a nucleocapsid of helical symmetry. The genome size of coronaviruses ranges from approximately 26 to 32 kilobases, one of the largest among RNA viruses. They have characteristic club-shaped spikes that project from their surface, which in electron micrographs create an image reminiscent of the solar corona from which their name derives.
+</p>
+<br>
+<h1>Evolution</h1>
+<br>
+<p >
+  The most recent common ancestor (MRCA) of all coronaviruses is estimated to have existed as recently as 8000 BCE, although some models place the common ancestor as far back as 55 million years or more, implying long term coevolution with bat and avian species.[37] The most recent common ancestor of the alphacoronavirus line has been placed at about 2400 BCE, the betacoronavirus line at 3300 BCE, the gammacoronavirus line at 2800 BCE, and the deltacoronavirus line at about 3000 BCE. Bats and birds, as warm-blooded flying vertebrates, are an ideal natural reservoir for the coronavirus gene pool (bats the reservoir for alphacoronavirus and betacoronavirus – and birds the reservoir for gammacoronavirus and deltacoronavirus). The large number of host bat and avian species, and their global range, has enabled extensive evolution and dissemination of coronaviruses.
+
+Many human coronavirus have their origin in bats.The human coronavirus NL63 shared a common ancestor with a bat coronavirus (ARCoV.2) between 1190–1449 CE. The human coronavirus 229E shared a common ancestor with bat coronavirus (GhanaGrp1 Bt CoV) between 1686–1800 CE. More recently, alpaca coronavirus and human coronavirus 229E diverged sometime before 1960. MERS-CoV emerged in humans from bats through the intermediate host of camels. MERS-CoV, although related to several bat coronavirus species, appears to have diverged from these several centuries ago. The most closely related bat coronavirus and SARS-CoV diverged in 1986. A possible path of evolution, of SARS coronavirus and keen bat coronaviruses, suggests that SARS related coronaviruses coevolved in bats for a long time. The ancestors of SARS-CoV first infected leaf-nose bats of the genus Hipposideridae; subsequently, they spread to horseshoe bats in the species Rhinolophidae, and then to civets, and finally to humans.
+
+
+</p>
+<br>
+<h1 >Outbreaks of human coronavirus diseases</h1>
+<br>
+<h4>Severe acute respiratory syndrome (SARS)</h4>
+<p >
+  
+
+  In 2003, following the outbreak of severe acute respiratory syndrome (SARS) which had begun the prior year in Asia, and secondary cases elsewhere in the world, the World Health Organization (WHO) issued a press release stating that a novel coronavirus identified by a number of laboratories was the causative agent for SARS. The virus was officially named the SARS coronavirus (SARS-CoV). More than 8,000 people were infected, about ten percent of whom died.
+
+<h4>Middle East respiratory syndrome (MERS)</h4>
+
+<p>In September 2012, a new type of coronavirus was identified, initially called Novel Coronavirus 2012, and now officially named Middle East respiratory syndrome coronavirus (MERS-CoV). The World Health Organization issued a global alert soon after. The WHO update on 28 September 2012 said the virus did not seem to pass easily from person to person. However, on 12 May 2013, a case of human-to-human transmission in France was confirmed by the French Ministry of Social Affairs and Health. In addition, cases of human-to-human transmission were reported by the Ministry of Health in Tunisia. Two confirmed cases involved people who seemed to have caught the disease from their late father, who became ill after a visit to Qatar and Saudi Arabia. Despite this, it appears the virus had trouble spreading from human to human, as most individuals who are infected do not transmit the virus. By 30 October 2013, there were 124 cases and 52 deaths in Saudi Arabia.
+
+After the Dutch Erasmus Medical Centre sequenced the virus, the virus was given a new name, Human Coronavirus—Erasmus Medical Centre (HCoV-EMC). The final name for the virus is Middle East respiratory syndrome coronavirus (MERS-CoV). The only U.S. cases (both survived) were recorded in May 2014.
+
+In May 2015, an outbreak of MERS-CoV occurred in the Republic of Korea, when a man who had traveled to the Middle East, visited four hospitals in the Seoul area to treat his illness. This caused one of the largest outbreaks of MERS-CoV outside the Middle East. As of December 2019, 2,468 cases of MERS-CoV infection had been confirmed by laboratory tests, 851 of which were fatal, a mortality rate of approximately 34.5%.</p>
+
+<h4>Coronavirus disease 2019 (COVID-19)</h4>
+
+<p>In December 2019, a pneumonia outbreak was reported in Wuhan, China. On 31 December 2019, the outbreak was traced to a novel strain of coronavirus, which was given the interim name 2019-nCoV by the World Health Organization (WHO), later renamed SARS-CoV-2 by the International Committee on Taxonomy of Viruses. Some researchers have suggested the Huanan Seafood Wholesale Market may not be the original source of viral transmission to humans.
+
+As of 21 April 2020, there have been at least 170,389 confirmed deaths and more than 2,478,634 confirmed cases in the coronavirus pneumonia pandemic. The Wuhan strain has been identified as a new strain of Betacoronavirus from group 2B with approximately 70% genetic similarity to the SARS-CoV. The virus has a 96% similarity to a bat coronavirus, so it is widely suspected to originate from bats as well. The pandemic has resulted in travel restrictions and nationwide lockdowns in several countries.</p>
+</p>
+</div>
+
+
+
+
+<div class="modal fade love" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Covaid19 Symptoms</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p> 
+          <h1> COVID-19 virus affects different people in different ways.</h1> <br>
+           
+          <p  class="list">COVID-19 is a respiratory disease and most infected people will develop mild to moderate symptoms 
+            and recover without requiring special treatment.  People who have underlying medical conditions and those over 60 years old have a higher risk of developing severe disease and death.</p>
+         <div class="modal-body">
+           <ul>
+
+          <h2>Common symptoms include:</h2>
+          
+          <li class="list">fever</li>
+          <li class="list">tiredness</li>
+          <li class="list">dry cough.</li>
+         <li class="list">Other symptoms include:</li> 
+          
+          <li class="list">shortness of breath</li>
+          <li class="list">aches and pains</li>
+          <li class="list">sore throat</li>
+          <li class="list">and very few people will report diarrhoea, nausea or a runny nose.</li>
+          <li class="list">People with mild symptoms who are otherwise healthy should self-isolate and contact their medical provider or a COVID-19 information line for advice on testing and referral.</li>
+          
+         <li class="list">People with fever, cough or difficulty breathing should call their doctor and seek medical attention.</li>
+        </ul></div>
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>  
+
+
+
+<div class="modal fade love" id="videoModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Click to know...</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     
+         <div class="modal-body">
+           <ul style="list-style: none;">
+
+          <h2 style="font-family: cursive;">All the major government link is given below:</h2>
+         <hr> 
+         <a href="https://www.mohfw.gov.in/">   <li style="font-size: medium;" class="list">Ministry of health and family welfare</li></a>
+         <a href="https://www.mygov.in/covid-19/">   <li class="list">Covid warriors</li></a>
+         <a href="https://ncdc.gov.in/">   <li class="list">National center of disease control</li></a>
+        <a href=" https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en_IN"><li class="list"> Aarogya Setu</li> </a>
+        
+        <hr style="color:white">
+        
+        <img class="card-img-top" src="{% static "corona/app.png"%}" alt="Card image cap">
+          
+          
+        </ul></div>
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>  
+
+
+
+
+</div>
+
+
+
+
+
+
+
+ {% block footer%}
+
+ {% endblock%}
+  
+
+  
+  
+    
+    
+  
+
+
+  
+</div>
+{%endblock%}

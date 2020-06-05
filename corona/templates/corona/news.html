@@ -1,0 +1,101 @@
+{% extends 'corona/header.html' %}
+
+{% block title %}Safety & Measures{%endblock %}
+
+{%block css%}
+.news{
+    max-height:300px;
+}
+
+{%endblock%}
+
+
+
+{% block body %}
+{%load static%}
+<div class="container" style="background-color:white;opacity:0.9">
+  <br>
+    <div class="d-flex align-items-center p-3  bg-dark rounded">
+        <img class="mr-3 rounded-100" src="{% static "corona/coronalogo.jpg"%}" alt="" width="48" height="48">
+        <div class="lh-100">
+          <h1 class="mb-0 text-white lh-100">Health news section</h1>
+          <small class="text-white">Tribute to covaid warriors</small>
+        </div>
+      </div>
+      <br>
+      <h3>Recent update</h3>
+      <hr>
+      <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+      <div class="container">
+      {% for i,j,k,l in image%}  
+        
+      <div class="card mb-3">
+      
+        <h2 class="card-title bg-danger text-white" >{{i}}.<br> <button class="btn btn-dark mx-small-4 my-small-4 rounded text-white" onclick="clicked('headline  {{i}}')">Click me to listen</button></h2>
+        <audio src="" class="speech"></audio>  
+        
+        <div class="card-body">
+            <img class="card-img-top news h-50" src="{{j}}" alt="Card image cap">
+          <p class="card-text">{{k}}<a href="{{l}}">Read more</a></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+        
+    <script>
+      function clicked(e){
+        console.log(e)
+        var text=e
+        
+        if ('speechSynthesis' in window) {
+  
+          var synthesis = window.speechSynthesis;
+        
+          // Get the first `en` language voice in the list
+          var voice = synthesis.getVoices().filter(function(voice) {
+            return voice.lang === 'en';
+          })[0];
+        
+          // Create an utterance object
+          var utterance = new SpeechSynthesisUtterance(text);
+        
+          // Set utterance properties
+          utterance.voice = voice;
+          utterance.pitch = 1.5;
+          utterance.rate = 1.25;
+          utterance.volume = 0.8;
+        
+          // Speak the utterance
+          synthesis.speak(utterance);
+        
+        } else {
+          console.log('Text-to-speech not supported.');
+        }
+      }
+        
+        
+        
+        
+      </script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+{% block footer%}
+
+
+{%endblock%}
+{% endblock%}

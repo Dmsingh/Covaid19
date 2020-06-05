@@ -1,0 +1,212 @@
+{% extends 'corona/header.html' %}
+
+{% block title %}Safety & Measures{%endblock %}
+
+{%block css%}
+
+
+{%endblock%}
+
+
+{% block body %}
+{%load static%}
+<br>
+<div  class="container " style="background-color:white;opacity:0.9;">       
+  <br>  
+<h1 class="">Like to contact us... </h1><hr>
+<form  action="/corona/contact"  class=" container mx-12 mx-auto" style="max-width: 1000px;" method="POST"> {% csrf_token %}
+  
+    
+      <div class="form-group   col-md-12">
+        <label   style="font-size:x-large"  for="inputName">Full Name</label>
+        <center><input type="text" class="form-control form-control-lg " data-toggle="tooltip" data-placement="top" title="Full name should start with capital letter." oninput="data()" name="fname" id="fname" placeholder="Dm Singh" required ></center>
+        <div class="container" id="tl">
+          <h6 id="e1">
+              
+          </h6>
+        </div>
+      </div>
+     
+      
+      
+      <div class="form-group  col-md-12">
+        <label   style="font-size:x-large" for="inputEmail4">Email</label>
+       <center><input type="email" data-toggle="tooltip" data-placement="top" required title="Format of the email should look like abc@gmail.com"  class="form-control form-control-lg " name="eid" oninput="email('inputemail')"  id="inputemail"placeholder="abcd123@gmail.com"></center> 
+       <div class="container" id="el">
+        <h6 id="el" >
+            
+        </h6>
+      </div>
+      
+      </div>
+      
+      
+      <div class="form-group  col-md-12">
+        <label  style="font-size:x-large"  for="inputAddress">Any suggestion</label>
+        
+        <center><textarea class="form-control form-control-lg "data-toggle="tooltip"  data-placement="top" title="This field should either blank or more than two word." id="suggest" name="suggest" rows="5" max-row="20" placeholder="Comment out your suggestion here..."></textarea></center>
+        <h6 class="suggest" >
+            
+        </h6>
+            
+      
+      </div>
+      <div class="form-group  col-md-12">
+        <label  style="font-size:x-large"  for="inputAddress">Any Query</label>
+        
+        <center><textarea class="form-control form-control-lg "      data-toggle="tooltip" data-placement="top" title="This field should either blank or more than two word." id="query" name="query" rows="5" max-row="20"  placeholder="Comment out your query here..."></textarea></center>
+        <h6 class="query" >
+            
+        </h6>
+    
+      </div>
+      <div class="form-group  col-md-12">
+        <label  style="font-size:x-large"  for="inputAddress">Any myth</label>
+        
+        <center><textarea class="form-control form-control-lg "  id="myth" data-toggle="tooltip" data-placement="top" title="This field should either blank or more than two word." name="myth" rows="5" max-row="20" placeholder="Comment out your myth here..."></textarea></center>
+        <h6 class="query" >
+            
+        </h6>
+      </div>
+      
+    
+    <center><button type="submit " class="  btn btn-outline-danger  btn btn-outline-danger">Submit</button></center> 
+  </form><hr>
+  
+</div>
+
+
+
+
+
+
+ 
+</div>
+
+<script>
+function data()
+  {
+  
+
+  var l=0
+  text=document.getElementById('fname').value
+  
+  if(text.length==1)
+  { 
+      console.log("hii")
+      if(text==text.toUpperCase())
+      
+        {
+                console.log("hello")
+                tool=document.getElementById('e1')
+                
+                
+                
+                tool.innerHTML="First letter is capital! hurrah"
+                
+              
+                tool.style["color"]="green";
+                
+        }
+      else{
+        l+=1
+        tool=document.getElementById('e1')
+        tool.innerHTML="First letter is should be capital"
+        
+        tool.style["color"]="red";
+        console.log(tool)
+      }
+  }
+
+if (text.length>3)
+{
+    console.log(text)
+    tool=document.getElementById('e1')
+    tool.innerHTML="Look Good!"
+    tool.style["color"]="green";
+    
+}
+    
+else if(text.length<=3 && text.length>1)
+     {
+    l+=1
+    tool=document.getElementById('e1')
+    tool.innerHTML="Full name should be grater than 2 character"
+    tool.style["color"]="red";
+  }
+else {
+  console.log("patanhi")
+}  
+  
+
+
+}
+  function email(e)
+  {
+    l=0
+    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    
+    text=document.getElementById(e).value
+    
+  if(text.length>=3)
+  {
+        //console.log(emaill)
+        console.log(text)
+        tool=document.getElementById('el')
+        
+        
+        
+        tool.innerHTML="Look Good!"
+        
+       
+        tool.style["color"]="green";
+        
+         if(text.match(mailformat))
+                {
+                  tool=document.getElementById('el')
+                      
+                      
+                  console.log(text,"hii")
+                  tool.innerHTML="BOOYAH! valid email format."
+                  
+                
+                  tool.style["color"]="green";
+                }
+          else{
+            tool=document.getElementById('el')
+                      
+                      
+            
+            tool.innerHTML="please type valid email format"
+            
+          
+            tool.style["color"]="red";
+          }      
+
+        
+        
+  }     
+      
+else{
+        l+=1
+        tool=document.getElementById('el')
+        tool.innerHTML="Email should be greater than 2"
+        
+        tool.style["color"]="red";
+        console.log(tool)
+      }
+
+    
+  }
+  
+
+  
+  
+
+  
+</script>
+{% block footer%}
+
+
+{%endblock%}
+{% endblock%}

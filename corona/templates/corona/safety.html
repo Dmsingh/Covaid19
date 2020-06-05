@@ -1,0 +1,225 @@
+{% extends 'corona/header.html' %}
+
+{% block title %}Safety & Measures{%endblock %}
+
+{%block css%}
+h1{
+    color:rgb(12, 11, 11), 43;
+    text-decoration-line: underline;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+   }
+p{
+    font-family: 'Bitter', serif;
+    font-size:20px;
+    font-weight:600;
+    color:black
+   }
+mark{
+    background-color: black;
+    color:aliceblue
+} 
+.list{
+  font-family: 'Bitter', serif;
+    font-size:16px;
+    font-weight:600;
+    color:white
+} 
+.modal-content{
+  opacity:0.9;
+  background-color:black;
+}
+h2{
+  color:white
+}
+.modal-body h1{
+  color:white;
+    text-decoration-line: underline;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+}
+h5{
+  color:white;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+}
+.btn1{
+ margin-left:-30px;
+ margin-top:8px;
+ position:fixed;
+ opacity:0.9
+ 
+}
+.div1{
+  margin-top:-100px
+}
+
+ 
+
+{%endblock%}
+
+
+{% block body %}
+{%load static%}
+
+<div class="container" style="background-color:white;opacity:0.9">
+<div class="container">
+  <a class="btn1 btn-lg bg-success tooltip " data-toggle="tooltip" data-placement="left" title="Click me for precaution." style="text-decoration-line:none;color:white" href="/corona/precaution" ><img class="border transparent rounded-circle" style="width: 50px;height:50px;border:6px solid green"src="{% static "corona/image/precaution.jpg"%}" alt="" class="rounded-circle"></a>
+  <br>
+  <br>
+  <br>
+     
+    <a class=" btn1 btn-lg bg-danger tooltip" data-placement="right" title="Click me for symptoms." style="text-decoration-line:none;color:white" data-toggle="modal" data-target="#videoModal"  ><img class="border transparent rounded-circle" style="width: 50px;height:50px;"src="{% static "corona/image/symptoms.svg"%}" alt="" class="rounded-circle"></a>
+       <br>
+  <br>
+  <br>
+  
+    <a class=" btn1 btn-lg bg-warning tooltip" data-placement="right" title="Click me for major Government Links." style="text-decoration-line:none;color:white" data-toggle="modal" data-target="#videoModal1"  ><img class="border transparent rounded-circle" style="width: 50px;height:50px; "src="{% static "corona/image/links.svg"%}" alt="" class="rounded-circle"></a>
+    </div> 
+
+  <h1 class="div1">Basic protective measures against the new coronavirus</h1>
+  <hr>
+  <p>Stay aware of the latest information on the COVID-19 outbreak, available on the WHO website and through your national and local public health authority. Most people who become infected experience mild illness and recover, but it can be more severe for others. Take care of your health and protect others by doing the following:</p>
+  <div class="embed-responsive embed-responsive-21by9">
+    <iframe class="embed-responsive-item"  width="814" height="475" src="https://www.youtube.com/embed/bPITHEiFWLc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div> <br>
+  <p><mark>Wash your hands frequently</mark>
+Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.
+Why? Washing your hands with soap and water or using alcohol-based hand rub kills viruses that may be on your hands.<br>
+    
+<mark>Maintain social distancing</mark>
+Maintain at least 1 metre (3 feet) distance between yourself and anyone who is coughing or sneezing.
+Why? When someone coughs or sneezes they spray small liquid droplets from their nose or mouth which may contain virus.
+If you are too close, you can breathe in the droplets, including the COVID-19 virus if the person coughing has the disease.</p>
+<hr>
+<div class="embed-responsive embed-responsive-21by9">
+    <iframe class="embed-responsive-item"   width="814" height="400" src="https://www.youtube.com/embed/6Ooz1GZsQ70" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div><br>
+  <p><mark>Avoid touching eyes, nose and mouth</mark>
+    Why? Hands touch many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth. From there, the virus can enter your body and can make you sick.<br>
+        
+    <mark>Practice respiratory hygiene</mark>
+    Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. 
+    Then dispose of the used tissue immediately.
+   Why? Droplets spread virus. By following good respiratory hygiene you protect the people around you from viruses such as cold, 
+   flu and COVID-19.<br>
+   <mark>If you have fever, cough and difficulty breathing, seek medical care early</mark>
+   Stay home if you feel unwell. If you have a fever, cough and difficulty breathing, seek medical attention and call in advance. 
+   Follow the directions of your local health authority.
+   Why? National and local authorities will have the most up to date information on the situation in your area. 
+   Calling in advance will allow your health care provider to quickly direct you to the right health facility.
+  This will also protect you and help prevent spread of viruses and other infections.
+</p><hr>
+<div class="embed-responsive embed-responsive-21by9">
+    <iframe class="embed-responsive-item"    width="814" height="475" src="https://www.youtube.com/embed/qF42gZVm1Bo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div><br>
+  <p><mark>Stay informed and follow advice given by your healthcare provider</mark>
+    Stay informed on the latest developments about COVID-19. Follow advice given by your healthcare provider, your national and local public health authority or your employer on how to protect yourself and others from COVID-19.
+
+    Why? National and local authorities will have the most up to date information on whether COVID-19 is spreading in your area. 
+    They are best placed to advise on what people in your area should be doing to protect themselves.<br>
+   <h1>Protection measures for persons who are in or have recently visited (past 14 days) areas where COVID-19 is spreading</h1> <hr>
+   <div class="container"><ul>
+       <li>
+        <p>Follow the guidance outlined above.</p>
+       </li>
+       <li>
+        <p>Stay at home if you begin to feel unwell, even with mild symptoms such as headache and slight runny nose, until you recover. Why? Avoiding contact with others and visits to medical facilities will allow
+         these facilities to operate more effectively and help protect you and others from possible COVID-19 and other viruses.</p>
+       </li>
+       <li>
+        <p>If you develop fever, cough and difficulty breathing, seek medical advice promptly as this may be due to a respiratory infection or other serious condition.
+         Call in advance and tell your provider of any recent travel or contact with travelers. Why? Calling in advance will allow your health care provider to quickly direct you to the right health facility.
+         This will also help to prevent possible spread of COVID-19 and other viruses.</p>
+       </li>
+   </ul>  
+   </div>  
+   
+   <h1>Operation would you like to perform.</h1>
+   <hr>
+  </div>
+   
+   
+
+<div class="modal fade love" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Covaid19 Symptoms</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p> 
+          <h1> COVID-19 virus affects different people in different ways.</h1> <br>
+           
+          <p  class="list">COVID-19 is a respiratory disease and most infected people will develop mild to moderate symptoms 
+            and recover without requiring special treatment.  People who have underlying medical conditions and those over 60 years old have a higher risk of developing severe disease and death.</p>
+         <div class="modal-body">
+           <ul>
+
+          <h2>Common symptoms include:</h2>
+          
+          <li class="list">fever</li>
+          <li class="list">tiredness</li>
+          <li class="list">dry cough.</li>
+         <li class="list">Other symptoms include:</li> 
+          
+          <li class="list">shortness of breath</li>
+          <li class="list">aches and pains</li>
+          <li class="list">sore throat</li>
+          <li class="list">and very few people will report diarrhoea, nausea or a runny nose.</li>
+          <li class="list">People with mild symptoms who are otherwise healthy should self-isolate and contact their medical provider or a COVID-19 information line for advice on testing and referral.</li>
+          
+         <li class="list">People with fever, cough or difficulty breathing should call their doctor and seek medical attention.</li>
+        </ul></div>
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>  
+
+
+
+<div class="modal fade love" id="videoModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Click to know...</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     
+         <div class="modal-body">
+           <ul style="list-style: none;">
+
+          <h2 style="font-family: cursive;">All the major government link is given below:</h2>
+         <hr> 
+         <a href="https://www.mohfw.gov.in/">   <li style="font-size: medium;" class="list">Ministry of health and family welfare</li></a>
+         <a href="https://www.mygov.in/covid-19/">   <li class="list">Covid warriors</li></a>
+         <a href="https://ncdc.gov.in/">   <li class="list">National center of disease control</li></a>
+        <a href=" https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en_IN"><li class="list"> Aarogya Setu</li> </a>
+        
+        <hr style="color:white">
+        
+        <img class="card-img-top" src="{% static "corona/app.png"%}" alt="Card image cap">
+          
+          
+        </ul></div>
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</div>   
+
+</div>
+
+{% block footer%}
+
+
+{%endblock%}
+{% endblock%}

@@ -1,0 +1,70 @@
+{% extends 'corona/header.html' %}
+
+{% block title %}Safety & Measures{%endblock %}
+
+
+
+
+{%block css%}
+
+
+{%endblock%}
+
+
+{% block body %}
+{%load static%}
+<br>
+  <br>
+  <br>
+<div class="container" style="background-color:white;opacity:0.9">
+  <br>
+    <h1>Global record of covaid19</h1>
+   
+    <hr>
+    <h4 style="text-decoration-line: underline;font-size:large">Global statical corona record is given below : </h4>
+      
+      <div class="-flex " style="float: left;">
+        {%for i,j in record%}
+        <p  class="mx-1 my-1"style="font-size:small; float:left"  >{{i}} :{{j}}</p>
+        {%endfor%}
+      </div>
+    
+     <div class="container-flex" style:"width:90%">
+      <canvas id="pie-chart" ></canvas>
+    </div>
+    <br>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script type="text/Javascript">
+
+      var config = {
+        type: 'bar',
+        data: {
+          datasets: [{
+            data: {{ data|safe }},
+            backgroundColor: [
+            'red', 'green', 'black', 'purple', 'orange','blue','yellow'
+            ],
+           
+            label: 'Corona record'
+          }],
+          labels: {{ labels|safe }}
+        },
+        options: {
+          responsive: true
+        }
+      };
+    
+      window.onload = function() {
+        var ctx = document.getElementById('pie-chart').getContext('2d');
+        window.myPie = new Chart(ctx, config);
+      };
+    
+    </script> 
+</div>
+</div><br><br>
+
+{% block footer%}
+
+
+{%endblock%}
+{% endblock%}

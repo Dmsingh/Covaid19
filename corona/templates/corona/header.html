@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <title>{% block title%}{% endblock%}</title>
+   
+    <style type="text/css">
+    
+
+      * {
+          margin: 0;
+          padding: 0;
+      }
+
+      body {
+          font-family: Calibri, sans-serif;
+      }
+
+      .background-wrap {
+          position: fixed;
+          z-index: -1000;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          top: 0;
+          left: 0;
+      }
+
+      #video-bg-elem {
+          position: absolute;
+          top: 0;
+          left: 0;
+          min-height: 100%;
+          min-width: 100%;
+      }
+      h1{
+    color:rgb(12, 11, 11), 43;
+    text-decoration-line: underline;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+   }
+p{
+    font-family: 'Bitter', serif;
+    font-size:20px;
+    font-weight:600;
+    color:black
+   }
+mark{
+    background-color: black;
+    color:aliceblue
+} 
+.list{
+  font-family: 'Bitter', serif;
+    font-size:16px;
+    font-weight:600;
+    color:white
+} 
+.modal-content{
+  opacity:0.9;
+  background-color:black;
+}
+h2{
+  color:white
+}
+.modal-body h1{
+  color:white;
+    text-decoration-line: underline;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+}
+h5{
+  color:white;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+}
+h3{
+  color:black;
+    font-family: 'Lobster', cursive;
+    font-size:25px;
+}
+{% block css%}      
+
+{% endblock%}
+      
+  </style>
+  
+  <script>
+   
+
+  </script>
+</head>
+{% load static%}
+<body  >
+     
+      <nav class="navbar  fixed-top navbar-expand-lg navbar-dark bg-dark">
+    
+          
+        
+        <a class="navbar-brand  " href="#"><img class="mr-2" style="width: 50px;"src="{% static "corona/coronalogo.jpg"%}" alt="" class="rounded-circle">Fight Against Corona </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+            <li class="nav-item active">
+              <a class="nav-link btn btn-outline-danger my-2 mx-1 my-sm-0" href="/corona/home" >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-danger my-2  mx-1 my-sm-0" href="/corona/news/">News</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle btn btn-outline-danger  mx-1 my-sm-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Graph
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/corona/graph">Global</a>
+                <a class="dropdown-item" href="/corona/country_graph">Country</a>
+                <a class="dropdown-item" href="/corona/state_graph">State</a>
+             
+            </li>
+              <a class="nav-link btn btn-outline-danger my-2  mx-1 my-sm-0" href="/corona/safety">Safety Measure</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-danger my-2  mx-1 my-sm-0" href="/corona/mythbuster">Myth Buster</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-danger my-2  mx-1 my-sm-0" href="/corona/contact">Suggestion/Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-danger my-2  mx-1 my-sm-0" href="/corona/helpline">Helpline</a>
+            </li>
+            
+            
+           
+          
+            
+          </ul>  
+          
+        </div>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <div class="background-wrap">
+  <video  id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted"> 
+
+      <!--replace your video url here-->
+      <source src="{% static "corona/home.mp4"%}" type="video/mp4">
+      Video not supported
+  </video>          
+</div>
+<main>
+  <div class="container">
+    {% include 'corona/messages.html' %}
+    {% block content %}
+    {% endblock %}
+  </div>
+</main>
+
+
+        {% block body%} {%endblock%}
+     
+       
+     <hr>
+        <footer class="container-flex  bg-dark">
+    
+
+          
+              <div class="col-md-9 col-sm-12  bg-dark">
+        
+                
+                 <br>
+                <div class="    mb-3 ">
+                  <h5 class="mb-4 font-weight-bold text-uppercase text-white">Developers</h5>
+                <ul class="list-group">
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2"><h3  class="text-white font-weight-bold">Dm Singh</h3></li>
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2"><h3  class="text-white font-weight-bold">Sharad Pandey</h3></li>
+                  <li class="list-group-item bg-transparent border-0 p-0 mb-2"><h3  class="text-white font-weight-bold" > Support & contibution : Our team Jai Neel.</h3></li>
+                </ul>
+                </div>
+        
+               
+                </div>
+        
+              </div>
+                <div class="col-md-12">
+                  <div class="py-1 d-flex justify-content-center align-items-center">
+                    <a class="mr-1" href="#">&#0169Covaidwarriors</a>
+                    
+                  </div>
+                </div>
+            </div>
+          </div>
+        </footer>
+        {% block footer%}
+
+        {%endblock%}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+    
+    
+     </script>
+
+     {% block js%} {%endblock%}
+  </body>
+</html>

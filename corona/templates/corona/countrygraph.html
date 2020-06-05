@@ -1,0 +1,80 @@
+{% extends 'corona/header.html' %}
+
+{% block title %}Safety & Measures{%endblock %}
+
+
+
+
+{%block css%}
+
+
+{%endblock%}
+
+
+{% block body %}
+{%load static%}
+<br><br>
+<div class="container" style="background-color:white;opacity:0.9">
+  <hr>
+
+  <div class="container-flex"> 
+  <br>
+    <h1>Country wise record of covaid19</h1>
+    <hr>
+          <h4 style="text-decoration-line: underline;font-size:large">Corona statical record in {{country}} is given below : </h4>
+      
+      <div class="container-flex " style="float: left;">
+        {%for i,j in record%}
+        <p  class="my-1 mx-1"style="font-size:small; float:left"  >{{i}} :{{j}}</p>
+        {%endfor%}
+      </div><br>
+      
+    </div>
+    <form  action="/corona/country_graph/" method="GET">
+   <input class="" type="text" placeholder="Country name" name="country" style="font-size:18px" Value={{country}}>
+   <input class="btn btn-outline-danger my-1" type="submit" value="submit">
+
+
+    </form>
+    
+     <div class="container-flex" style:"width:75%" >
+      <canvas id="country-chart" ></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script type="text/Javascript">
+
+      var config = {
+        type: 'bar',
+        data: {
+          datasets: [{
+            data: {{ csdata|safe }},
+            backgroundColor: [
+            'red', 'green', 'black', 'purple', 'orange','blue'
+            ],
+            label: 'Corona record'
+          }],
+          labels: {{ clabels|safe }},
+          
+        },
+        options: {
+          responsive: true
+        }
+      };
+    
+      window.onload = function() {
+        var ctx = document.getElementById('country-chart').getContext('2d');
+        window.myPie = new Chart(ctx, config);
+      };
+    
+    </script> 
+  <br> <br>
+  </div>
+  <br><br>
+  </div> 
+
+{% block footer%}
+
+
+{%endblock%}
+{% endblock%}
