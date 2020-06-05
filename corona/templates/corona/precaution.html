@@ -1,16 +1,17 @@
+
 {% extends 'corona/header.html' %}
 
-{% block title %}Safety & Measures{%endblock %}
+{% block title %}Major Precaution{% endblock %}
 
-{%block css%}
-
-
-{%endblock%}
+{% block css%}
 
 
+{% endblock%}
+
+{% load static %}
 {% block body %}
-{%load static%}
-<div class="container" style="background-color:white;">
+
+<div class="container" style="background-color:white;opacity:0.9">
 <h1>Visitors are requested to think  over and share this images to spread awarness.</h1><hr>
 <div class="card-deck">
     <div class="card">
@@ -70,7 +71,7 @@
       <div class="card">
         <img class="card-img-top" src="{% static "corona/image/8.jpg"%}" alt="Card image cap">
         <div class="card-body">
-          <a class="btn btn-outline-danger" href="{% static "corona/image/8.png"%}" download="awarness_programm">Download</a>
+          <a class="btn btn-outline-danger" href="{% static "corona/image/8.jpg"%}" download="awarness_programm">Download</a>
           <p class="card-text">Visitors are heartly, requested to use social media platform to spread awarness to fight against pandemic corona.Stay away from myth and don't share wrong content as well as false myth. </p>
           
         </div>
@@ -78,7 +79,7 @@
       <div class="card">
         <img class="card-img-top" src="{% static "corona/image/9.jpg"%}" alt="Card image cap">
         <div class="card-body">
-          <a class="btn btn-outline-danger" href="{% static "corona/image/9.png"%}" download="awarness_programm">Download</a>
+          <a class="btn btn-outline-danger" href="{% static "corona/image/9.jpg"%}" download="awarness_programm">Download</a>
           <p class="card-text">Visitors are heartly, requested to use social media platform to spread awarness to fight against pandemic corona.Stay away from myth and don't share wrong content as well as false myth. </p>
           
         </div>
@@ -289,5 +290,5 @@
 {% block footer%}
 
 
-{%endblock%}
+{% endblock%}
 {% endblock%}

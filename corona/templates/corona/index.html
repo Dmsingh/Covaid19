@@ -1,9 +1,9 @@
 {% extends 'corona/header.html' %}
 
-{% block title %} Home Page{%endblock %}
+{% block title %} Home Page{% endblock %}
 <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&family=Lobster&display=swap" rel="stylesheet">
-{%block css%}
+{% block css%}
  h1{
   color:rgb(12, 11, 11), 43;
   text-decoration-line: underline;
@@ -59,7 +59,7 @@ h5{
 
 
 {% block body %}
-{%load static%}
+{% load static%}
 
 <div class="background-wrap">
   <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted"> 
@@ -218,7 +218,7 @@ As of 21 April 2020, there have been at least 170,389 confirmed deaths and more 
 
  {% block footer%}
 
- {% endblock%}
+ {% endblock %}
   
 
   
@@ -230,4 +230,4 @@ As of 21 April 2020, there have been at least 170,389 confirmed deaths and more 
 
   
 </div>
-{%endblock%}
+{% endblock%}

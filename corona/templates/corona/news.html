@@ -1,10 +1,14 @@
 {% extends 'corona/header.html' %}
 
-{% block title %}Safety & Measures{%endblock %}
+{% block title %}Health News{%endblock %}
 
 {%block css%}
 .news{
     max-height:300px;
+}
+.btn1{
+  width:40px;
+  height:40px;
 }
 
 {%endblock%}
@@ -31,7 +35,7 @@
         
       <div class="card mb-3">
       
-        <h2 class="card-title bg-danger text-white" >{{i}}.<br> <button class="btn btn-dark mx-small-4 my-small-4 rounded text-white" onclick="clicked('headline  {{i}}')">Click me to listen</button></h2>
+        <h2 class="card-title bg-danger text-white" >{{i}}.<br> <button class="btn btn-mute mx-1" onclick="clicked('headline  {{i}}')"><img class="btn1 border rounded-circle" src="{% static "corona/image/icon.jpg"%}" alt="Card image cap"></button></h2>
         <audio src="" class="speech"></audio>  
         
         <div class="card-body">

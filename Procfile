@@ -1,0 +1,1 @@
+web: gunicorn covaid19.wsgi --log-file -

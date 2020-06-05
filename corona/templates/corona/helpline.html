@@ -1,8 +1,8 @@
 {% extends 'corona/header.html' %}
 
-{% block title %}Safety & Measures{%endblock %}
+{% block title %}Emergency helpline{%endblock %}
 
-{%block css%}
+{% block css%}
 .card-img-top{
     max-height:200px;
 }
@@ -10,11 +10,11 @@
   overflow:hidden
 }
 
-{%endblock%}
+{% endblock %}
 
 
 {% block body %}
-{%load static%}
+{% load static%}
 <div class="container main" style="background-color:white;opacity:0.9;">   
 
 <br>         
@@ -229,13 +229,7 @@
         <td>104</td>
         <td><a class="btn btn-outline-danger" href="{% static "corona/file/Daman and Diu.pdf"%}" download="awarness_programm">Download</a></td>
       </tr>
-      <tr>
-        <th scope="row">32</th>
-        <td>Dadra and Nagar Haveli</td>
-        
-        <td>104</td>
-        <td><a class="btn btn-outline-danger" href="{% static "corona/file/Dadra and Nagar Haveli.pdf"%}" download="awarness_programm">Download</a></td>
-      </tr>
+      
       <tr>
         <th scope="row">33</th>
         <td>Delhi</td>
@@ -246,7 +240,7 @@
         <th scope="row">34</th>
         <td>Jammu & kashmir</td>
         <td>104</td>
-        <td><a class="btn btn-outline-danger" href="{% static "corona/file/Jammu & kashmir.pdf"%}" download="awarness_programm">Download</a></td>
+        <td><a class="btn btn-outline-danger" href="{% static "corona/file/jammu.pdf"%}" download="awarness_programm">Download</a></td>
       </tr>
       <tr>
         <th scope="row">35</th>
@@ -281,5 +275,5 @@
 {% block footer%}
 
 
-{%endblock%}
+{% endblock%}
 {% endblock%}
