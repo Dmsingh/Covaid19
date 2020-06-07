@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 
 import os
-From decouple imprt config
+From decouple import config
 from django.contrib.messages import constants as messages
 from django.contrib.messages import constants as alerts
 from django.contrib.messages import constants as message_constants
