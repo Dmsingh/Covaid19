@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 
 import os
+From decouple imprt config
 from django.contrib.messages import constants as messages
 from django.contrib.messages import constants as alerts
 from django.contrib.messages import constants as message_constants
@@ -88,7 +89,7 @@ WSGI_APPLICATION = 'covaid19.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'covaid19battle@gmail.com' 
-EMAIL_HOST_PASSWORD = '7060610914dm'
+EMAIL_HOST_PASSWORD = config('pass')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
